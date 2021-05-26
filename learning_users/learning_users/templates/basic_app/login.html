@@ -1,0 +1,29 @@
+<!DOCTYPE>
+{% extends 'basic_app/base.html' %}
+{% block body_block%}
+<div class ="jumbotron">
+<form action="{% url 'basic_app:user_login' %}" method="post">
+  {% csrf_token%}
+
+  <div class="container">
+  <p>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+    </p>
+
+    <p>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    </p>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+
+</form>
+
+</div>
+{% endblock %}
